@@ -25,7 +25,11 @@
 <body class="bg-gray-100 overflow-x-hidden font-roboto text-gray-900">
 
     <!-- HERO SECTION -->
-    <header class="relative bg-gradient-to-r from-blue-500 to-purple-600 py-24 text-white reveal">
+    <header class="relative flex flex-col bg-linear-to-r from-blue-500 to-purple-600 py-24 text-white reveal">
+        <!-- LANGUAGE SWITCHER ENGLISH - SPANISH -->
+    <div class="flex flex-row items-center content-around self-end me-4 border-2 border-black rounded-3xl w-33 h-12">
+        <span>Spanish</span> <span>English</span>
+    </div>
         <div class="mx-auto text-center container">
             <h1 class="drop-shadow-md font-bold text-5xl tracking-wide">Brian Perez Perez</h1>
             <p class="opacity-90 mt-4 text-xl">Fullstack / Backend Developer | Building Scalable Web Applications</p>
@@ -194,6 +198,6 @@
         window.addEventListener("scroll", revealOnScroll);
         window.addEventListener("load", revealOnScroll);
     </script>
-
+    <script src="test.js"></script>
 </body>
 </html>
