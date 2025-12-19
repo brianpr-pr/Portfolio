@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brian Perez Perez - Fullstack Developer Portfolio</title>
-    <script src="https://unpkg.com/i18next/dist/umd/i18next.js"></script>
-    <link href="./src/output.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.js"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('hmpvGyph2WTu89hdD')
+</script>
     <style>
-        /* Smooth fade + slide animations */
+        /* Animations */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -19,6 +24,35 @@
             opacity: 1;
             transform: translateY(0px);
         }
+
+
+
+
+        .field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.field input {
+  display: block;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #4460AA;
+  color: #fff;
+  border: none
+}
     </style>
 </head>
 <body class="bg-gray-100 overflow-x-hidden font-roboto text-gray-900">
@@ -26,9 +60,10 @@
     <!-- HERO SECTION -->
     <header class="relative flex flex-col bg-linear-to-r from-blue-500 to-purple-600 py-24 text-white reveal">
         <!-- LANGUAGE SWITCHER ENGLISH - SPANISH -->
-    <div class="flex flex-row items-center content-center self-end me-4">
-        <button id="language" class="bg-blue-500 hover:bg-blue-800 shadow-2xl mx-auto rounded-3xl w-33 h-12 text-center active:scale-95" language="english">Español</button>
-    </div>
+        <div class="flex flex-row items-center content-center self-end me-4">
+            <button id="language" class="bg-blue-500 hover:bg-blue-800 shadow-2xl mx-auto rounded-3xl w-33 h-12 text-center active:scale-95 transition-colors duration-300 ease-in-out" language="english">Español</button>
+        </div>
+        
         <div class="mx-auto text-center container">
             <h1 class="drop-shadow-md font-bold text-5xl tracking-wide">Brian Perez Perez</h1>
             <p class="opacity-90 mt-4 text-xl" id="role">Fullstack / Backend Developer | Building Scalable Web Applications</p>
@@ -75,8 +110,9 @@
                 >
                 <div class="p-6">
                     <h3 class="font-bold text-2xl" id="todo-list">To Do List</h3>
-                    <p class="mt-3 text-gray-600" id="todo-list-description">
-                    App that allows the user to mark a task as completed or uncompleted and filter them by All, Active, Completed.
+                    <p class="mt-1 text-gray-600" id="todo-list-description">
+                        App that allows the user to mark a task as completed or uncompleted and filter them by All, 
+                        Active, Completed.
                     </p>
                 </div>
                 </div>
@@ -92,8 +128,8 @@
                 >
                 <div class="p-6">
                     <h3 class="font-bold text-2xl" id="world-generator">World Generator</h3>
-                    <p class="mt-3 text-gray-600" id="world-generator-description">
-                    App that generates a world map with three sections and 'n' squares.
+                    <p class="mt-1 text-gray-600" id="world-generator-description">
+                        App that generates a world map with three sections and 'n' squares.
                     </p>
                 </div>
                 </div>
@@ -116,7 +152,7 @@
 
                 <div class="bg-gray-100 shadow-sm hover:shadow-md p-6 rounded-xl transition-all reveal">
                     <h4 class="font-semibold text-xl">Frameworks</h4>
-                    <p class="mt-2 text-gray-600">Laravel</p>
+                    <p class="mt-2 text-gray-600">Laravel, Tailwind</p>
                 </div>
 
                 <div class="bg-gray-100 shadow-sm hover:shadow-md p-6 rounded-xl transition-all reveal">
@@ -134,21 +170,22 @@
             <h2 class="mb-6 font-semibold text-4xl" id="contact">Contact</h2>
             <p class="mb-4 text-lg" id="work-proposal">Let's work together! Feel free to reach out anytime.</p>
 
-            <form action="" class="flex flex-col items-center bg-white shadow-black shadow-sm mx-auto rounded-md w-[80%]">
+            <form method="POST" class="flex flex-col items-center bg-white shadow-black shadow-sm mx-auto rounded-md w-[80%]" id="form">
                 <div class="flex flex-col items-center w-[60%]">
+                    <label for="email" class="self-start mt-4 mb-2">Email</label>
+                    <input type="text" name="email" id="email" class="shadow-lg border border-gray-300 rounded-md w-full">
+
+                    <label for="title" id="label-title" class="self-start mt-4 mb-2">Title</label>
+                    <input type="text" name="title" id="title" class="shadow-lg border border-gray-300 rounded-md w-full">
+
                     <label for="name" class="self-start mt-4 mb-2" id="label-name">Name</label>
                     <input id="name" name="name" type="text" class="shadow-lg border border-gray-300 rounded-md w-full">
-
-                    <label for="surname" class="self-start my-2" id="label-surname">Surname</label>
-                    <input id="surname" name="surname" type="text" class="shadow-lg border border-gray-300 rounded-md w-full">
 
                     <label for="message" class="self-start my-2" id="label-message">Message</label>
                     <textarea id="message" name="message" type="text" class="shadow-lg p-2 border border-gray-300 rounded-md w-full h-85 resize-none"></textarea>
 
-                    <label for="files" class="self-start my-2" id="label-file">Files</label>
-                    <input id="files" name="files" type="file" class="shadow-lg mb-5 px-3 border border-gray-300 rounded-md w-full" accept="image/*,.pdf,.doc,.docx">
-
-                    <button class="bg-blue-500 hover:bg-blue-800 shadow-lg mb-6 rounded-lg w-48 font-semibold text-white active:scale-95" id="button-send">Send</button>
+                    <input type="submit" id="button"
+                    class="shadow-lg my-6 rounded-lg w-48 font-semibold text-white active:scale-95">
                 </div>
             </form>
 
@@ -164,128 +201,25 @@
     </section>
 
     <!-- FOOTER -->
-<footer class="bg-blue-600 py-10 text-white text-center reveal">
-  <p class="mb-2">
-    <a href="https://example.com">Portfolio</a> © 2025 by
-    <a href="https://example.com">Brian Perez Perez</a> is licensed under
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
-  </p>
+    <footer class="bg-blue-600 py-10 text-white text-center reveal">
+        <p class="mb-2">
+            <a href="https://example.com">Portfolio</a> © 2025 by
+            <a href="https://example.com">Brian Perez Perez</a> is licensed under
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>
+        </p>
 
-  <!-- Icons row -->
-  <div class="flex justify-center items-center space-x-2">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" class="w-4 h-4">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" class="w-4 h-4">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" class="w-4 h-4">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="ND" class="w-4 h-4">
-  </div>
-</footer>
+        <!-- Icons row -->
+        <div class="flex justify-center items-center space-x-2">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" class="w-4 h-4">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" class="w-4 h-4">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" class="w-4 h-4">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="ND" class="w-4 h-4">
+        </div>
+    </footer>
 
-
-    <!-- JS ANIMATIONS -->
-    <script>
-        const reveals = document.querySelectorAll(".reveal");
-
-        function revealOnScroll() {
-            const windowHeight = window.innerHeight;
-
-            reveals.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 80) el.classList.add("visible");
-            });
-        }
-
-        window.addEventListener("scroll", revealOnScroll);
-        window.addEventListener("load", revealOnScroll);
-    </script>
-
-
-    <script>
-        document.getElementById("language").addEventListener("click", ()=>{
-            if(document.getElementById("language").getAttribute('language') === "english"){
-                i18next.changeLanguage('es');
-                document.getElementById("language").setAttribute('language', 'spanish');
-            }else if(document.getElementById("language").getAttribute('language') === "spanish"){
-                i18next.changeLanguage('en');
-                document.getElementById("language").setAttribute('language', 'english');
-            }
-
-            translate([...document.querySelector("body").children]);
-        });
-
-        i18next.init({
-            lng: 'en',
-            debug: false,
-            resources: {
-                en: {
-                    translation: {
-                        "language": "Español",
-                        "role": "Fullstack / Backend Developer | Building Scalable Web Applications",
-                        "resume": "Download CV",
-                        "about-me": "About Me",
-                        "personal-information": `I'm Brian Perez Perez, a passionate Fullstack/Backend Developer who enjoys building
-                                                scalable, efficient, and user-friendly web applications.
-                                                Skilled in JavaScript, PHP, Laravel and modern UI frameworks like Tailwind CSS.`,
-                        "proyects": "Projects",
-                        "todo-list": "To Do List",
-                        "todo-list-description": "App that allows the user to mark a task as completed or uncompleted and filter them by All, Active, Completed.",
-                        "world-generator": "World Generator",
-                        "world-generator-description": "App that generates a world map with three sections and 'n' squares.",
-                        "skills-technologies": "Skills & Technologies",
-                        "languages": "Languages",
-                        "tools": "Tools",
-                        "contact": "Contacto",
-                        "work-proposal": "Let's work together! Feel free to reach out anytime.",
-                        "label-name": "Name",
-                        "label-surname": "Surname",
-                        "label-message": "Message",
-                        "label-file": "Files",
-                        "button-send": "Send"
-                        
-                    }
-                },
-
-                es: {
-                    translation: {
-                        "language": "English",
-                        "role": "Programador Fullstack / Backend | Construyendo Aplicaciones Web Escalables",
-                        "resume": "Descargar Curriculum",
-                        "about-me": "Sobre Mí",
-                        "personal-information": `Soy Brian Perez Perez, un desarrollador Fullstack/Backend
-                                                apasionado que disfruta creando aplicaciones web escalables,
-                                                eficientes y fáciles de usar. Tengo experiencia en JavaScript, 
-                                                PHP, Laravel y en frameworks modernos de interfaz de usuario como Tailwind CSS.`,
-                        "proyects": "Proyectos",
-                        "todo-list": "Lista de Tareas",
-                        "todo-list-description": "Aplicación que permite al usuario marcar una tarea como completada o no completada y filtrarlas por Todas, Activas, Completadas.",
-                        "world-generator": "Generador de Mundos",
-                        "world-generator-description": "Aplicación que genera un mapa del mundo con tres secciones y 'n' casillas.",
-                        "skills-technologies": "Habilidades y Tecnologías",
-                        "languages": "Idiomas",
-                        "tools": "Herramientas",
-                        "contact": "Contacto",
-                        "work-proposal": "¡Trabajemos juntos! No dudes en contactarme en cualquier momento.",
-                        "label-name": "Nombre",
-                        "label-surname": "Apellido",
-                        "label-message": "Mensaje",
-                        "label-file": "Archivos",
-                        "button-send": "Enviar"
-                    }
-                }
-            }
-        });
-    
-    function translate(children){
-        children.forEach(element => {
-        //Recursive call to access all elements
-            if(element.children.length > 0){
-                translate([...element.children]);
-            }else{
-                if(i18next.t(element.id) !== element.id){
-                    element.textContent = i18next.t(element.id);
-                }
-            }
-        });
-    }
-    </script>
+    <!-- Scripts -->
+    <script src="/src/emailSender.js"></script>
+    <script src="/src/animations.js"></script>
+    <script src="/src/translator.js"></script>
 </body>
 </html>
