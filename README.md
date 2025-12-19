@@ -96,3 +96,10 @@ This project is licensed under the MIT License.
 💻 GitHub: Brian Perez GitHub
 
 ⭐ If you like this project, consider giving it a star on GitHub!
+
+
+Make label font size bigger in the form
+
+Upload CV in Spanish
+
+Change the position of the cover images of proyects
