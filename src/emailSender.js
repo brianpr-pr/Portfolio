@@ -22,7 +22,9 @@ form.addEventListener('submit', function(event) {
 
 function cleanForm(form){
   [...form.querySelectorAll('input')].forEach(input => {
-    input.value = '';
+    if(input.id !== 'button'){
+      input.value = '';
+    }
   });
   
   form.querySelector('textarea').value = '';
