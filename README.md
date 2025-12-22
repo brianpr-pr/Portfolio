@@ -44,16 +44,6 @@ Laravel (PHP)
 
 Tailwind CSS
 
-📂 Project Structure
-/
-├── public/
-├── src/
-│   ├── animations.js/
-│   ├── emailSender.js/
-│   ├── translator.js/
-│   
-└── README.md
-
 🧩 Features
 
 🎨 Modern & responsive UI
