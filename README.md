@@ -7,9 +7,9 @@ Welcome to my personal portfolio!
 This website showcases my experience, projects, skills, and includes a downloadable version of my CV.
 It is fully responsive and built with modern web technologies.
 
-🚀 Live Demo
+👉 Live Website: 
 
-👉 Live Website: example.com
+brianpr-pr.github.io/Portfolio/
 
 🧑‍💻 About Me
 
@@ -29,9 +29,8 @@ This portfolio includes:
 📬 Contact section
 
 🛠️ Tech Stack
-Languages
 
-Java
+Languages
 
 JavaScript
 
@@ -43,18 +42,16 @@ Frameworks & Libraries
 
 Laravel (PHP)
 
-Bootstrap
-
 Tailwind CSS
 
 📂 Project Structure
 /
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── assets/
-│   └── styles/
+│   ├── animations.js/
+│   ├── emailSender.js/
+│   ├── translator.js/
+│   
 └── README.md
 
 🧩 Features
@@ -66,8 +63,6 @@ Tailwind CSS
 🧱 Modular and clean code
 
 📱 Optimized for mobile, tablet, and desktop
-
-🌙 (Optional) Dark mode support
 
 📥 Installation & Setup
 
@@ -91,14 +86,13 @@ This project is licensed under the MIT License.
 
 📧 Email: brianperez@example.com
 
-🔗 LinkedIn: Brian Perez LinkedIn
+🔗 LinkedIn: [Brian Perez LinkedIn](https://www.linkedin.com/in/brian-perez-perez/)
 
-💻 GitHub: Brian Perez GitHub
+💻 GitHub: [Brian Perez GitHub](https://github.com/brianpr-pr/)
 
 ⭐ If you like this project, consider giving it a star on GitHub!
 
-
-Make label font size bigger in the form
+Things To Improve in the Future:
 
 Upload CV in Spanish
 
